@@ -13,7 +13,7 @@ def main():
     df = pd.DataFrame(data)
 
     # Display the DataFrame
-    df = pd.read_csv('train-1.csv')
+    # df = pd.read_csv('train-1.csv')
 
     # Display Data
     st.subheader("Data")
