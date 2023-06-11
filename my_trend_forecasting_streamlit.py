@@ -5,14 +5,8 @@ import plotly.express as px
 def main():
     st.title("Trend forecasting")
 
-    # Create a sample DataFrame
-    data = {
-        'Year': [2010, 2011, 2012, 2013, 2014, 2015],
-        'Sales': [50, 70, 80, 65, 90, 120]
-    }
-    df = pd.DataFrame(data)
-
-    # Display the DataFrame
+    # read the csv as DataFrame
+    df = pd.read_csv('train.csv')
 
     # Display Data
     st.subheader("Data")
