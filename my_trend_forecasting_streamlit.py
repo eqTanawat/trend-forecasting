@@ -37,7 +37,7 @@ SchoolHoliday - indicates if the (Store, Date) was affected by
 
         
     """)
-    arima= "https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/353461989_3507298182877887_4439614939122370442_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHrO1xnVshgOWhvyqXLy88O0dyTUwNf21LR3JNTA1_bUsWH-5eITlNp7avEJbJAxGVX0XBxAQwgY-8ycNksNFJK&_nc_ohc=NaeOo-u3aJcAX9qEZEH&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfBIMV0SCufyLRQsSP2xoo-Ro8lTnuuBtzXbUU47ttzHqQ&oe=648A1BA4"
+    arima= "https://scontent.fbkk5-4.fna.fbcdn.net/v/t1.6435-9/128124717_2804596149814764_4906386206631881031_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGGCHN9UWBRdfVh0OfUbH-Ed6cKhWM1XSx3pwqFYzVdLM0FjPdAM2s0LtD646TCNbIDwiinUF2OECRBDvnYCD4-&_nc_ohc=ZWj6U-yeLCsAX_u1Iwh&_nc_ht=scontent.fbkk5-4.fna&oh=00_AfA6a70HULl_Wy0alSQkLpzMzZLLM6KrOGnM6D5WVOrHTw&oe=64AD793D"
     st.image(arima)
     
     
