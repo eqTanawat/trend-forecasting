@@ -6,7 +6,13 @@ def main():
     st.title("Trend forecasting")
 
     # read the csv as DataFrame
-    df = pd.read_csv('train-1.csv')
+    df1 = pd.read_csv('file/train-1.csv')
+    df2 = pd.read_csv('file/train-2.csv')
+    df3 = pd.read_csv('file/train-3.csv')
+    df = df1.append(df2, ignore_index=True).append(df3, ignore_index=True)
+
+    # get image
+    # arima_predict = st.image("ARIMA_predict.png", caption="Data with ARIMA prediction")
 
     # Display Data
     st.subheader("Data")
@@ -31,18 +37,9 @@ SchoolHoliday - indicates if the (Store, Date) was affected by
 
         
     """)
-
-    # st.
-
-    # Create a line chart using Plotly
-    # fig_line = px.line(df, x='Year', y='Sales')
-    # st.subheader("Line Chart")
-    # st.plotly_chart(fig_line)
-
-    # # Create a bar chart using Plotly
-    # fig_bar = px.bar(df, x='Year', y='Sales')
-    # st.subheader("Bar Chart")
-    # st.plotly_chart(fig_bar)
-
+    arima= "https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/353461989_3507298182877887_4439614939122370442_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHrO1xnVshgOWhvyqXLy88O0dyTUwNf21LR3JNTA1_bUsWH-5eITlNp7avEJbJAxGVX0XBxAQwgY-8ycNksNFJK&_nc_ohc=NaeOo-u3aJcAX9qEZEH&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfBIMV0SCufyLRQsSP2xoo-Ro8lTnuuBtzXbUU47ttzHqQ&oe=648A1BA4"
+    st.image(arima)
+    
+    
 if __name__ == "__main__":
     main()
