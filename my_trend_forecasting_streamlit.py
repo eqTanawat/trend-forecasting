@@ -6,7 +6,7 @@ def main():
     st.title("Trend forecasting")
 
     # read the csv as DataFrame
-    df = pd.read_csv('train.csv')
+    df = pd.read_csv('train-1.csv')
 
     # Display Data
     st.subheader("Data")
