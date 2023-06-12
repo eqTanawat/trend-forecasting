@@ -8,9 +8,9 @@ def main():
     
 
     # read the csv as DataFrame
-    df1 = pd.read_csv('train-1.csv')
-    df2 = pd.read_csv('train-2.csv')
-    df3 = pd.read_csv('train-3.csv')
+    df1 = pd.read_csv('file/train-1.csv')
+    df2 = pd.read_csv('file/train-2.csv')
+    df3 = pd.read_csv('file/train-3.csv')
     df = df1.append(df2, ignore_index=True).append(df3, ignore_index=True)
 
     # get image
@@ -35,19 +35,23 @@ StateHoliday -  a = public holiday, b = Easter holiday,
                 c = Christmas, 0 = None
 SchoolHoliday - indicates if the (Store, Date) was affected by 
                 the closure of public schools
-
-
         
-                
+    As we can that there are more than a thousand stores with each store's data 
+are 3-year long, we will focus only a store for this case.
     """)
+
+    # Display Data plotted
     st.subheader("Data plotted")
-    st.text("Since there are more than 1000 stores, we will focus on the store 622 for\n\
-the educational purpose")
+    st.text("Here we are focusing on the store 622 for the educational purpose")
     sales= "https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/353461989_3507298182877887_4439614939122370442_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHrO1xnVshgOWhvyqXLy88O0dyTUwNf21LR3JNTA1_bUsWH-5eITlNp7avEJbJAxGVX0XBxAQwgY-8ycNksNFJK&_nc_ohc=NaeOo-u3aJcAX9qEZEH&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfBIMV0SCufyLRQsSP2xoo-Ro8lTnuuBtzXbUU47ttzHqQ&oe=648A1BA4"
     lnr = "https://scontent.fbkk5-8.fna.fbcdn.net/v/t39.30808-6/351309529_3507525069521865_6197265728625637096_n.jpg?stp=dst-jpg_p180x540&_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFFh_vCjyDsYLDVOvjgPS7rUN_vMvKeryRQ3-8y8p6vJD-SR0jzDYOa1bLFm4Zdfx_sPNXHZr5-gBjdg1WOurYC&_nc_ohc=2c9mRjahQ9kAX8NNiln&_nc_ht=scontent.fbkk5-8.fna&oh=00_AfBCyhNWIX6ey1_ivwcbOmxoJO3aiN_hvhjUmBTCEF0inA&oe=648B5C5D"
     arima = "https://scontent.fbkk5-8.fna.fbcdn.net/v/t39.30808-6/351500624_3507525299521842_9083148150464627825_n.jpg?stp=dst-jpg_p180x540&_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGhDaIO9gWbV6n85SfWr3jESIhVljZp70ZIiFWWNmnvRsygAVmUFvTVj27pxrt3-XDMAfggZHoGu31gje-AxW9C&_nc_ohc=wFl_0tbDscYAX-Kfs_x&_nc_ht=scontent.fbkk5-8.fna&oh=00_AfDgUqfIqNwws19nDEua8oKVzGIMm6mfCsSyp7ak5AFO-g&oe=648BA88B"
     st.image(sales, caption="Sales of store no. 622")
+    st.text("""
+    We will use this data to predict the future value of sales of the store no.622
+    """)
     
+    # Display Prediction
     st.subheader("Prediction")
     select = st.selectbox('Select the model to predict', [ "Linear Regression", "ARIMA"])
     if select ==  "Linear Regression":
