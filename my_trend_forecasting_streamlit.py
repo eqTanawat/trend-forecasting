@@ -5,8 +5,6 @@ import plotly.express as px
 def main():
     st.title("Trend forecasting")
 
-    
-
     # read the csv as DataFrame
     df1 = pd.read_csv('train-1.csv')
     df2 = pd.read_csv('train-2.csv')
@@ -62,6 +60,8 @@ are 3-year long, we will focus only a store for this case.
         st.image(arima, caption="Sales of store no. 622 with last 95-day prediction using ARIMA")
         st.text("We will use root mean square error(RMSE) to evaluate the error.")
         st.text("The RMSE = 2050.939466743283")
+   
+    st.info("We can see that in this case, using Linear Regression to predict the sales is more accurate.")
 
 if __name__ == "__main__":
     main()
