@@ -8,9 +8,9 @@ def main():
     
 
     # read the csv as DataFrame
-    df1 = pd.read_csv('file/train-1.csv')
-    df2 = pd.read_csv('file/train-2.csv')
-    df3 = pd.read_csv('file/train-3.csv')
+    df1 = pd.read_csv('train-1.csv')
+    df2 = pd.read_csv('train-2.csv')
+    df3 = pd.read_csv('train-3.csv')
     df = df1.append(df2, ignore_index=True).append(df3, ignore_index=True)
 
     # get image
