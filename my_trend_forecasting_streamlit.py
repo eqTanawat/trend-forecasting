@@ -5,6 +5,8 @@ import plotly.express as px
 def main():
     st.title("Trend forecasting")
 
+    
+
     # read the csv as DataFrame
     df1 = pd.read_csv('train-1.csv')
     df2 = pd.read_csv('train-2.csv')
@@ -36,10 +38,26 @@ SchoolHoliday - indicates if the (Store, Date) was affected by
 
 
         
+                
     """)
-    arima= "https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/353461989_3507298182877887_4439614939122370442_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHrO1xnVshgOWhvyqXLy88O0dyTUwNf21LR3JNTA1_bUsWH-5eITlNp7avEJbJAxGVX0XBxAQwgY-8ycNksNFJK&_nc_ohc=NaeOo-u3aJcAX9qEZEH&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfBIMV0SCufyLRQsSP2xoo-Ro8lTnuuBtzXbUU47ttzHqQ&oe=648A1BA4"
-    st.image(arima)
+    st.subheader("Data plotted")
+    st.text("Since there are more than 1000 stores, we will focus on the store 622 for\n\
+the educational purpose")
+    sales= "https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/353461989_3507298182877887_4439614939122370442_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHrO1xnVshgOWhvyqXLy88O0dyTUwNf21LR3JNTA1_bUsWH-5eITlNp7avEJbJAxGVX0XBxAQwgY-8ycNksNFJK&_nc_ohc=NaeOo-u3aJcAX9qEZEH&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfBIMV0SCufyLRQsSP2xoo-Ro8lTnuuBtzXbUU47ttzHqQ&oe=648A1BA4"
+    lnr = "https://scontent.fbkk5-8.fna.fbcdn.net/v/t39.30808-6/351309529_3507525069521865_6197265728625637096_n.jpg?stp=dst-jpg_p180x540&_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFFh_vCjyDsYLDVOvjgPS7rUN_vMvKeryRQ3-8y8p6vJD-SR0jzDYOa1bLFm4Zdfx_sPNXHZr5-gBjdg1WOurYC&_nc_ohc=2c9mRjahQ9kAX8NNiln&_nc_ht=scontent.fbkk5-8.fna&oh=00_AfBCyhNWIX6ey1_ivwcbOmxoJO3aiN_hvhjUmBTCEF0inA&oe=648B5C5D"
+    arima = "https://scontent.fbkk5-8.fna.fbcdn.net/v/t39.30808-6/351500624_3507525299521842_9083148150464627825_n.jpg?stp=dst-jpg_p180x540&_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGhDaIO9gWbV6n85SfWr3jESIhVljZp70ZIiFWWNmnvRsygAVmUFvTVj27pxrt3-XDMAfggZHoGu31gje-AxW9C&_nc_ohc=wFl_0tbDscYAX-Kfs_x&_nc_ht=scontent.fbkk5-8.fna&oh=00_AfDgUqfIqNwws19nDEua8oKVzGIMm6mfCsSyp7ak5AFO-g&oe=648BA88B"
+    st.image(sales, caption="Sales of store no. 622")
     
-    
+    st.subheader("Prediction")
+    select = st.selectbox('Select the model to predict', [ "Linear Regression", "ARIMA"])
+    if select ==  "Linear Regression":
+        st.image(lnr, caption="Sales of store no. 622 with last 95-day prediction using Linear Regression")
+        st.text("We will use root mean square error(RMSE) to evaluate the error.")
+        st.text("The RMSE = 646.5447165656475")
+    elif select == "ARIMA":
+        st.image(arima, caption="Sales of store no. 622 with last 95-day prediction using ARIMA")
+        st.text("We will use root mean square error(RMSE) to evaluate the error.")
+        st.text("The RMSE = 2050.939466743283")
+
 if __name__ == "__main__":
     main()
